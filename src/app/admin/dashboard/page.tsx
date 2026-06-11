@@ -1,7 +1,8 @@
 // src/app/admin/dashboard/page.tsx
 // Admin-only dashboard — server renders auth check, client renders charts
 
-import { auth } from "@/auth";
+import { getServerSession } from "next-auth"
+import { authOptions } from "@/auth"
 import { redirect } from "next/navigation";
 import AdminDashboardClient from "@/components/AdminDashboardClient";
 import { getServerSession } from "next-auth";
