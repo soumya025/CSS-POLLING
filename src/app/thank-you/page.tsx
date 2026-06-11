@@ -1,12 +1,12 @@
 // src/app/thank-you/page.tsx
 // Shown after successful vote submission
 
-import { auth } from "@/auth";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/auth";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/auth";
+
 
 export default async function ThankYouPage() {
   const session = await getServerSession(authOptions);
