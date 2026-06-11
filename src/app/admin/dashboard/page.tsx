@@ -35,7 +35,7 @@ export default async function AdminDashboardPage() {
               <p className="text-xs text-gray-500">Signed in as</p>
               <p className="text-sm text-indigo-400 font-medium">{session.user.email}</p>
             </div>
-            
+            <a
               href="/api/auth/signout"
               className="py-2 px-4 rounded-lg bg-white/5 hover:bg-red-500/10 border border-white/10 hover:border-red-500/30 text-gray-400 hover:text-red-400 transition-all text-sm"
             >
