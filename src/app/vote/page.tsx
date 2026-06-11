@@ -63,7 +63,7 @@ export default async function VotePage() {
     fill
     className="object-contain"
   />
-  <span className="absolute">CSS</span>
+  <span className="absolute"></span>
 </div>
             <div>
               <p className="text-xs text-indigo-400 font-medium uppercase tracking-widest">Computer Science Society</p>
