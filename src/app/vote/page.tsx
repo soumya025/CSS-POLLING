@@ -1,13 +1,13 @@
 // src/app/vote/page.tsx
 // Main voting page — server component, redirects if not auth'd or already voted
 
-import { auth } from "@/auth";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/auth";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import VotingUI from "@/components/VotingUI";
 import Image from "next/image";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/auth";
+
 
 const CANDIDATES = [
   {
