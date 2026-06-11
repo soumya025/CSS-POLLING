@@ -1,26 +1,23 @@
 // src/app/auth/error/page.tsx
-// Shown when sign-in fails (wrong domain, etc.)
-
 import Link from "next/link";
 
-export default function AuthErrorPage({
+export default async function AuthErrorPage({
   searchParams,
 }: {
-  searchParams: { error?: string };
+  searchParams: Promise<{ error?: string }>;
 }) {
-  const isInvalidDomain = searchParams.error === "InvalidDomain" || searchParams.error === "AccessDenied";
+  const params = await searchParams;
+  const isInvalidDomain = params.error === "InvalidDomain" || params.error === "AccessDenied";
 
   return (
     <main className="min-h-screen flex items-center justify-center px-4">
       <div className="glass-card max-w-md w-full p-10 text-center animate-scale-in">
-        {/* Icon */}
         <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center">
           <svg className="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
               d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
           </svg>
         </div>
-
         {isInvalidDomain ? (
           <>
             <h1 className="text-2xl font-bold text-white mb-3">Access Denied</h1>
@@ -41,11 +38,7 @@ export default function AuthErrorPage({
             </p>
           </>
         )}
-
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 btn-primary"
-        >
+        <Link href="/" className="inline-flex items-center gap-2 btn-primary">
           <span>← Back to Login</span>
         </Link>
       </div>
