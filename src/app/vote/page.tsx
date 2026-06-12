@@ -10,16 +10,17 @@ import Image from "next/image";
 
 
 const CANDIDATES = [
+    {
+    name: "Rishi Karmakar",
+    photo: "/images/rishi.jpg",
+    description: "Candidate for AGS Position",
+  },
   {
     name: "Raunak Bhattacharjee",
     photo: "/images/raunak.jpg",
     description: "Candidate for AGS Position",
   },
-  {
-    name: "Rishi Karmakar",
-    photo: "/images/rishi.jpg",
-    description: "Candidate for AGS Position",
-  },
+
 ];
 
 export default async function VotePage() {
@@ -96,7 +97,7 @@ export default async function VotePage() {
 
         {/* Title section */}
         <div className="text-center mb-8 animate-fade-in-up delay-100">
-          <p className="glow-badge mb-4 inline-block">AGS Position 2024</p>
+          <p className="glow-badge mb-4 inline-block">AGS Position 20267</p>
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 tracking-tight leading-tight">
             CSS AGS{" "}
             <span className="gradient-text">Feedback Poll</span>
